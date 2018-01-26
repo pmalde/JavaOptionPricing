@@ -1,10 +1,12 @@
-package com.bushido;
+package com.bushido.datagenerators;
+
+import com.bushido.ModelParameters;
 
 import java.util.Random;
 
 public class GeometricBrownianMotion {
 
-    public static double[] generateLogReturns(ModelParameters parameters){
+    public double[] generateLogReturns(ModelParameters parameters){
 
         //Initialise an array of doubles to store the returns
         double[] returnsArray = new double[parameters.getTime()];
@@ -22,7 +24,7 @@ public class GeometricBrownianMotion {
         return returnsArray;
     }
 
-    public static double[] convertToPrices(double[] logReturns, ModelParameters parameters) {
+    public double[] convertToPrices(double[] logReturns, ModelParameters parameters) {
         double[] returns = new double[logReturns.length];
         for (int i = 0; i< logReturns.length; i++) {
             returns[i] = Math.exp(logReturns[i]);
@@ -37,15 +39,15 @@ public class GeometricBrownianMotion {
         return prices;
     }
 
-    public static void main(String[] args) {
-        ModelParameters parameters = new ModelParameters();
-        parameters.setInitialPrice(100.0);
-        parameters.setTime(252);
-        parameters.setTimeDelta(1d/252d);
-        parameters.setVolatility(0.2);
-
-        double[] results  = generateLogReturns(parameters);
-        double[] prices = convertToPrices(results, parameters);
-        System.exit(0);
-    }
+//    public static void main(String[] args) {
+//        ModelParameters parameters = new ModelParameters();
+//        parameters.setInitialPrice(100.0);
+//        parameters.setTime(252);
+//        parameters.setTimeDelta(1d/252d);
+//        parameters.setVolatility(0.2);
+//
+//        double[] results  = generateLogReturns(parameters);
+//        double[] prices = convertToPrices(results, parameters);
+//        System.exit(0);
+//    }
 }
