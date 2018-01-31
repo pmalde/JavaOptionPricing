@@ -38,16 +38,4 @@ public class GeometricBrownianMotion {
 
         return prices;
     }
-
-//    public static void main(String[] args) {
-//        ModelParameters parameters = new ModelParameters();
-//        parameters.setInitialPrice(100.0);
-//        parameters.setTime(252);
-//        parameters.setTimeDelta(1d/252d);
-//        parameters.setVolatility(0.2);
-//
-//        double[] results  = generateLogReturns(parameters);
-//        double[] prices = convertToPrices(results, parameters);
-//        System.exit(0);
-//    }
 }
