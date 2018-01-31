@@ -20,7 +20,7 @@ public class JumpDiffusionProcess extends GeometricBrownianMotion {
         for (int i=0; i < jumps.length; i++) {
             if (i >= jump) {
                 jumps[i] = (lnd.sample() - 1);
-                jump = nextJump(((JumpDiffusionModelParameters) parameters).getLambda());
+                jump = jump + nextJump(((JumpDiffusionModelParameters) parameters).getLambda());
             }
         }
 
